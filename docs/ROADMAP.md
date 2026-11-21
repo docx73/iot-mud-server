@@ -22,7 +22,11 @@ tests; the v2 server is the one the club runs.
 Doc's TASK-039 `light` verb (`9a25236`) is ported from the joined history
 ([#44](https://github.com/FSS-IoT/iot-mud-server/issues/44)).
 
-## v2.1 — depth (next; grill first)
+## v2.1 — depth (next; spec signed, tickets next)
+
+The contract is [`SPEC.md`](../SPEC.md): full M1 exit in five sub-milestones
+(v2.1.0 foundation, v2.1.1 identity, v2.1.2 depth, v2.1.3 world, v2.1.4
+acceptance), ending in the 3+ member club playtest.
 
 - Name + password auth, persistent characters, SQLite write-through, YAML
   worlds.
@@ -32,8 +36,9 @@ Doc's TASK-039 `light` verb (`9a25236`) is ported from the joined history
 - NPCs, rate limits, idle timeout, and shutdown events.
 - The 28 M1 tickets and the M2–M5 epics from the original
   [agentic-mud design](design/agentic-mud-v2.1.md) are inputs for this
-  milestone, not part of the completed v2.0 milestone. Re-cut them before
-  working; several assume SQLite/YAML/auth that v2.0 deliberately deferred.
+  milestone, not part of the completed v2.0 milestone. They are closed as
+  superseded when the fresh set lands; several assume SQLite/YAML/auth that
+  v2.0 deliberately deferred.
 
 ## v2.2 — IoT and LLM
 
