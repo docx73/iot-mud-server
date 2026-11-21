@@ -4,8 +4,10 @@ Signed: _(pending owner signature)_
 
 Reviewed: _(pending a fresh session; PR approval is the record)_
 
-No v2.1 code is written before the signature line exists, and no PR merges
-without an approving review from someone other than its author.
+No v2.1 code is written before the signature line exists. Every PR from a
+non-admin account needs an approving review from another account. Admins can
+bypass with `gh pr merge --admin`, but the fresh review is still the
+expectation.
 
 This spec covers **v2.1**. v2.0 (common-server parity) is delivered; v2.2 is a
 placeholder to be grilled later. The historical design is
@@ -144,7 +146,7 @@ v2.1 does **not** deliver:
 - Client repos are individual. This repo owns the contract, not the clients.
 - Coordination: the assignee is the lock; one open PR per issue; CI checks the
   issue link and assignee; tickets declare `Touches:` paths; branch protection
-  and a merge queue serialize merges.
+  serializes merges, with a merge queue when parallel merges begin.
 
 ## Decisions
 
@@ -157,7 +159,7 @@ v2.1 does **not** deliver:
 | 2026-11-21 | YAML only, 30–40 rooms; agents author areas in parallel | Non-coders can contribute; the validator catches the errors parallel authors make. |
 | 2026-11-21 | NPC dialogue and deterministic wandering, no LLM | Proves NPC state without a model dependency. |
 | 2026-11-21 | Five sub-milestones | Foundation blocks, then depth and world parallelize, acceptance last. |
-| 2026-11-21 | Assignee lock + claim guard + path declarations + merge queue | Agents on different machines and models must not duplicate claims or collide on files. |
+| 2026-11-21 | Assignee lock + claim guard + `Touches:` warning + branch protection (merge queue when parallel merges begin) | Agents on different machines and models must not duplicate claims or collide on files. |
 | 2026-11-21 | Close the 28 old M1 tickets and cut a fresh set | They assume a different architecture; a stale ticket is a duplicate-work trap. |
 | 2026-11-21 | Clients pin a server commit; changelog + `hello.server_commit` | A client can see what it is missing and whether the protocol moved. |
 | 2026-11-21 | Disconnect sleeps the character; it stays in the world | Persistent world; reconnect resumes in place with inventory. |
