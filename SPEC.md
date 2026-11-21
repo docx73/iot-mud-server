@@ -1,8 +1,8 @@
 # iot-mud-server spec — v2.1
 
-Signed: _(pending owner signature)_
+Signed: Micah, 2026-11-21
 
-Reviewed: _(pending a fresh session; PR approval is the record)_
+Reviewed: _(pending Doc's agent; PR approval is the record)_
 
 No v2.1 code is written before the signature line exists. Every PR from a
 non-admin account needs an approving review from another account. Admins can
